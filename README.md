@@ -1,4 +1,7 @@
 ffriends
 ========
 Qt based card game *Sheng Ji*
-Author : Weipeng
+
+Author : Weipeng He
+Email  : heweipeng (at) gmail.com
+
