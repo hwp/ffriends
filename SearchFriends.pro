@@ -4,9 +4,11 @@
 ######################################################################
 
 TEMPLATE = app
+QT += svg
 TARGET = 
 DEPENDPATH += .
 INCLUDEPATH += src
+RESOURCES = res.qrc
 
 DESTDIR = bin
 OBJECTS_DIR = bin/.obj

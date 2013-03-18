@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QWidget>
-#include <QImage>
+#include <QSvgRenderer>
 
 class Puff : public QWidget
 {
@@ -16,6 +16,6 @@ class Puff : public QWidget
 
   private:
     QPoint p;
-    QImage img;
+    QSvgRenderer rdr;
 };
 

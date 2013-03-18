@@ -8,11 +8,10 @@ Puff::Puff(QWidget *parent)
     : QWidget(parent)
 {
   p = QPoint(0, 0);
+
+  rdr.load(QString(":/data/bonded.svg"));
   
-  QImageReader ir;
-  ir.setFileName(QString("/usr/share/icons/gnome/32x32/emotes/face-monkey.png"));
-  img = ir.read();
-  
+  setStyleSheet("QWidget {background : green}");
   resize(350, 280);
   move(0, -20);      
   setWindowTitle("Puff");
@@ -23,8 +22,11 @@ void Puff::paintEvent(QPaintEvent *e)
   Q_UNUSED(e);  
   QPainter painter(this);
   
-  //painter.drawRect(p.x(), p.y(), 10, 10);
-  painter.drawImage(p, img);
+  // painter.drawRect(p.x(), p.y(), 10, 10);
+  // painter.drawImage(p, img);
+  QRect roi = rdr.boundsOnElement("6_spade").toRect();
+  rdr.setViewBox(roi);
+  rdr.render(&painter, QRect(p, roi.size()));
 }
 
 void Puff::mousePressEvent(QMouseEvent *e)
