@@ -25,8 +25,7 @@ void Puff::paintEvent(QPaintEvent *e)
   // painter.drawRect(p.x(), p.y(), 10, 10);
   // painter.drawImage(p, img);
   QRect roi = rdr.boundsOnElement("6_spade").toRect();
-  rdr.setViewBox(roi);
-  rdr.render(&painter, QRect(p, roi.size()));
+  rdr.render(&painter, "6_spade", QRect(p, roi.size()));
 }
 
 void Puff::mousePressEvent(QMouseEvent *e)
