@@ -24,8 +24,9 @@ void Puff::paintEvent(QPaintEvent *e)
   
   // painter.drawRect(p.x(), p.y(), 10, 10);
   // painter.drawImage(p, img);
-  QRect roi = rdr.boundsOnElement("6_spade").toRect();
-  rdr.render(&painter, "6_spade", QRect(p, roi.size()));
+  QString card("red_joker");
+  QRect roi = rdr.boundsOnElement(card).toRect();
+  rdr.render(&painter, card, QRect(p, roi.size()));
 }
 
 void Puff::mousePressEvent(QMouseEvent *e)
